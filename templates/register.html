@@ -1,0 +1,108 @@
+{% extends 'base.html'%}
+{% block content %}
+  <div class="container">
+      <div class="row">
+        <p align="center" class="flow-text cyan-text text-darken-7">Registration Form</p>
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s4">
+                  <input name="first_name" id="first_name" type="text" class="validate">
+                  <label for="first_name">First Name</label>
+                </div>
+                <div class="input-field col s4">
+                  <input name="middle_name" id="middle_name" type="text" class="validate">
+                  <label for="middle_name">Middle Name</label>
+                </div>
+                <div class="input-field col s4">
+                  <input name="last_name" id="last_name" type="text" class="validate">
+                  <label for="last_name">Last Name</label>
+                </div>
+              </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input name="username" id="username" type="text" class="validate">
+              <label for="usename">Username</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+              <input name="password1" id="password1" type="password" class="validate">
+              <label for="password1">Password</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input name="password2" id="password2" type="password" class="validate">
+              <label for="password2">Confirm Password</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input name="email" id="email" type="email" class="validate">
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <div class="row">
+              <div class="input-field col s12">
+                <input name="contact" id="contact" type="text" class="validate">
+                <label for="contact">Contact No</label>
+              </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                  <input name="address" id="address" type="text" class="validate">
+                  <label for="address">Address</label>
+                </div>
+              </div>
+              <div class="row">
+              <div class="input-field col s12">
+                  <select name="blood_group">
+                    <option value=""  disabled selected>Choose</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                  </select>
+                    <label>Blood Group</label>
+                 </div>
+                </div>
+                
+                  
+
+          <div class="row">
+            <div class="input-field col s12">
+              <button class="btn waves-effect waves-light" type="submit">Register
+            <i class="material-icons right">send</i>
+          </button>
+              <div id="errMsg" class="card-panel cyan lighten-2 red-text text-darken-2" style="display: none"></div>
+            </div>
+          </div>
+      </form>
+      
+    </div>
+  </div>
+   <footer class="page-footer teal">
+      <div class=" page-footer teal footer-copyright">
+        <div class="container flow-text" align="center">
+          Copyright &copy; 2019 <a class="brown-text text-darken-3" href="#">The Invictus Code</a>
+        </div>
+      </div>
+    </footer>
+
+
+ 
+
+  <script>
+    
+  $(document).ready(function(){
+    $('select').formSelect();
+  });
+  </script>
+
+  </body>
+</html>
+{% endblock %}

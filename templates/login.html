@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Session</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo"><img src="{% static 'image/logo.png' %}" height="67"></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/"><i class="material-icons left">home</i>Home</a></li>
+            <li><a href="/account/register"><i class="material-icons left">input</i>Register</a></li>
+            <li><a href="/account/login"><i class="material-icons left">account_circle</i>Login</a></li>
+            <li><a href="aboutus.html"><i class="material-icons left">group</i>About Us</a></li>
+          </ul>
+          <ul id="nav-mobile" class="sidenav">
+              <li><a href="/">Home</a></li>
+              <li><a href="/account/register">Register</a></li>
+              <li><a href="/account/login">Login</a></li>
+              <li><a href="aboutus.html">About Us</a></li>
+          </ul>
+          <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a> 
+        </div>
+      </nav>
+  <div class="container">
+      <div class="row">
+        <p align="center" class="flow-text cyan-text text-darken-7">Login</p>
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input name="username" id="username" type="text" class="validate">
+              <label for="usename">Username</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+              <input name="password" id="address" type="password" class="validate">
+              <label for="password">Password</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <button class="btn waves-effect waves-light" type="submit">Login
+            <i class="material-icons right">send</i>
+          </button>
+              <div id="errMsg" class="card-panel cyan lighten-2 red-text text-darken-2" style="display: none"></div>
+            </div>
+          </div>
+      </form>
+      <div class="row">
+        <div class="input-field col s12">
+          <div style="display: none">
+           <h4>portion to hide</h4>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+         <div style="display: none">
+           <h3>portion to hide</h3>
+           <p style="display: none">PORTION TO BE HIDDEN</p>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="page-footer teal">
+      <div class=" page-footer teal footer-copyright">
+        <div class="container flow-text" align="center">
+          Copyright &copy; 2019 <a class="brown-text text-darken-3" href="#">The Invictus Code</a>
+        </div>
+      </div>
+    </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'js/materialize.js' %}"></script>
+  <script src="{% static 'js/init.js' %}"></script>
+
+  </body>
+</html>
