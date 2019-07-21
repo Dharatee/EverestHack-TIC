@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1563675419642.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1199662209",
+    "id" : "B412EBE",
+    "lastKnownWriteTime" : 1563677519,
+    "last_content_update" : 1563677519411,
+    "path" : "C:/Users/User/Desktop/Naxapp/naxapp.Rmd",
+    "project_path" : "naxapp.Rmd",
+    "properties" : {
+        "cursorPosition" : "1,14",
+        "last_setup_crc32" : "40D8AE9Abb338d19",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

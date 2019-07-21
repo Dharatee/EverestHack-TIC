@@ -1,0 +1,180 @@
+<!doctype HTML>
+<meta charset = 'utf-8'>
+<html>
+  <head>
+    <link rel='stylesheet' href='nvd3/css/nv.d3.css'>
+    <link rel='stylesheet' href='nvd3/css/rNVD3.css'>
+    
+    <script src='nvd3/js/jquery-1.8.2.min.js' type='text/javascript'></script>
+    <script src='nvd3/js/d3.v3.min.js' type='text/javascript'></script>
+    <script src='nvd3/js/nv.d3.min-new.js' type='text/javascript'></script>
+    <script src='nvd3/js/fisheye.js' type='text/javascript'></script>
+    
+    <style>
+    .rChart {
+      display: block;
+      margin-left: auto; 
+      margin-right: auto;
+      width: 800px;
+      height: 400px;
+    }  
+    </style>
+    
+  </head>
+  <body >
+    
+    <div id = 'chart320856881a9' class = 'rChart nvd3'></div>    
+    <script type='text/javascript'>
+ $(document).ready(function(){
+      drawchart320856881a9()
+    });
+    function drawchart320856881a9(){  
+      var opts = {
+ "dom": "chart320856881a9",
+"width":      800,
+"height":      400,
+"x": "state",
+"y": "population",
+"color": [ "#E41A1C", "#377EB8", "#4DAF4A" ],
+"group": "gender",
+"type": "multiBarChart",
+"id": "chart320856881a9" 
+},
+        data = [
+ {
+ "state": "Province No. 1",
+"household":         992445,
+"gender": "male",
+"population":        2166536 
+},
+{
+ "state": "Province No. 2",
+"household":         932308,
+"gender": "male",
+"population":        2717938 
+},
+{
+ "state": "Province No. 3",
+"household":        1270797,
+"gender": "male",
+"population":        2747633 
+},
+{
+ "state": "Province No. 4",
+"household":         578219,
+"gender": "male",
+"population":        1090808 
+},
+{
+ "state": "Province No. 5",
+"household":         885203,
+"gender": "male",
+"population":        2140316 
+},
+{
+ "state": "Province No. 6",
+"household":         298359,
+"gender": "male",
+"population":         767923 
+},
+{
+ "state": "Province No. 7",
+"household":         469971,
+"gender": "male",
+"population":        1217887 
+},
+{
+ "state": "Province No. 1",
+"household":         992445,
+"gender": "female",
+"population":        2368407 
+},
+{
+ "state": "Province No. 2",
+"household":         932308,
+"gender": "female",
+"population":        2686207 
+},
+{
+ "state": "Province No. 3",
+"household":        1270797,
+"gender": "female",
+"population":        2781819 
+},
+{
+ "state": "Province No. 4",
+"household":         578219,
+"gender": "female",
+"population":        1312949 
+},
+{
+ "state": "Province No. 5",
+"household":         885203,
+"gender": "female",
+"population":        2358956 
+},
+{
+ "state": "Province No. 6",
+"household":         298359,
+"gender": "female",
+"population":         802495 
+},
+{
+ "state": "Province No. 7",
+"household":         469971,
+"gender": "female",
+"population":        1334630 
+} 
+]
+  
+      if(!(opts.type==="pieChart" || opts.type==="sparklinePlus" || opts.type==="bulletChart")) {
+        var data = d3.nest()
+          .key(function(d){
+            //return opts.group === undefined ? 'main' : d[opts.group]
+            //instead of main would think a better default is opts.x
+            return opts.group === undefined ? opts.y : d[opts.group];
+          })
+          .entries(data);
+      }
+      
+      if (opts.disabled != undefined){
+        data.map(function(d, i){
+          d.disabled = opts.disabled[i]
+        })
+      }
+      
+      nv.addGraph(function() {
+        var chart = nv.models[opts.type]()
+          .width(opts.width)
+          .height(opts.height)
+          
+        if (opts.type != "bulletChart"){
+          chart
+            .x(function(d) { return d[opts.x] })
+            .y(function(d) { return d[opts.y] })
+        }
+          
+         
+        
+          
+        
+
+        
+        
+        
+      
+       d3.select("#" + opts.id)
+        .append('svg')
+        .datum(data)
+        .transition().duration(500)
+        .call(chart);
+
+       nv.utils.windowResize(chart.update);
+       return chart;
+      });
+    };
+</script>
+    
+    <script></script>    
+  </body>
+</html>
