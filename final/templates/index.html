@@ -1,0 +1,280 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+      <div class="row">
+        <p align="center" class="flow-text cyan-text text-darken-7">Symptoms Survey</p>
+        <form action="prediction" method="POST" >
+          {% csrf_token %}
+          <div class="form-group row">
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Itching: </legend>
+              <div class="col-sm-10">
+                <input name="Itching" id="Itching" type="number" min="0" max="1" />
+                </div>
+              </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Skin Rash: </legend>
+              <div class="col-sm-10">
+                <input name="SkinRash" id="SkinRash" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Nodal Skin Eruptions: </legend>
+              <div class="col-sm-10">
+                <input name="NodalSkinEruptions" id="NodalSkinEruptions" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Continuous Sneezing: </legend>
+              <div class="col-sm-10">
+                <input name="ContinuousSneezing" id="ContinuousSneezing" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Shivering: </legend>
+              <div class="col-sm-10">
+                <input name="Shivering" id="Shivering" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Chills: </legend>
+              <div class="col-sm-10">
+                <input name="Chills" id="Chills" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Joint Pain: </legend>
+              <div class="col-sm-10">
+                <input name="JointPain" id="JointPain" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Stomach Pain: </legend>
+              <div class="col-sm-10">
+                <input name="StomachPain" id="StomachPain" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Acidity: </legend>
+              <div class="col-sm-10">
+                <input name="Acidity" id="Acidity" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Ulcers on Tongue: </legend>
+              <div class="col-sm-10">
+                <input name="UlcersOnTongue" id="UlcersOnTongue" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Muscle Wasting: </legend>
+              <div class="col-sm-10">
+                <input name="MuscleWasting" id="MuscleWasting" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Vomiting: </legend>
+              <div class="col-sm-10">
+                <input name="Vomiting" id="Vomiting" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Burning Micturition: </legend>
+              <div class="col-sm-10">
+                <input name="BurningMicturition" id="BurningMicturition" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Spotting Urination: </legend>
+              <div class="col-sm-10">
+                <input name="SpottingUrination" id="SpottingUrination" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Fatigue: </legend>
+              <div class="col-sm-10">
+                <input name="Fatigue" id="Fatigue" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Weight Gain: </legend>
+              <div class="col-sm-10">
+                <input name="WeightGain" id="WeightGain" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Anxiety: </legend>
+              <div class="col-sm-10">
+                <input name="Anxiety" id="Anxiety" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Cold Hands and Feet: </legend>
+              <div class="col-sm-10">
+                <input name="ColdHandsAndFeet" id="ColdHandsAndFeet" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Mood Swings: </legend>
+              <div class="col-sm-10">
+               <input name="MoodSwings" id="MoodSwings" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Weight Loss: </legend>
+              <div class="col-sm-10">
+                <input name="WeightLoss" id="WeightLoss" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Restlessness: </legend>
+              <div class="col-sm-10">
+                <input name="Restlessness" id="Restlessness" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Lethargy: </legend>
+              <div class="col-sm-10">
+                <input name="Lethargy" id="Lethargy" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Patches in Throat: </legend>
+              <div class="col-sm-10">
+               <input name="PatchesInThroat" id="PatchesInThroat" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Iregular Sugar Level: </legend>
+              <div class="col-sm-10">
+                <input name="IregularSugarLevel" id="IregularSugarLevel" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Cough: </legend>
+              <div class="col-sm-10">
+                <input name="Cough" id="Cough" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">High Fever: </legend>
+              <div class="col-sm-10">
+                <input name="HighFever" id="HighFever" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Sunken Eyes: </legend>
+              <div class="col-sm-10">
+                <input name="SunkenEyes" id="SunkenEyes" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Breathlessness: </legend>
+              <div class="col-sm-10">
+                <input name="Breathlessness" id="Breathlessness" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Sweating: </legend>
+              <div class="col-sm-10">
+                <input name="Sweating" id="Sweating" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Dehydration: </legend>
+              <div class="col-sm-10">
+                <input name="Dehydration" id="Dehydration" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Indigestion: </legend>
+              <div class="col-sm-10">
+                <input name="Indigestion" id="Indigestion" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Headache: </legend>
+              <div class="col-sm-10">
+                <input name="Headache" id="Headache" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Yellowish Skin: </legend>
+              <div class="col-sm-10">
+                <input name="YellowishSkin" id="YellowishSkin" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Dark Urine: </legend>
+              <div class="col-sm-10">
+                <input name="DarkUrine" id="DarkUrine" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Nausea: </legend>
+              <div class="col-sm-10">
+                <input name="Nausea" id="Nausea" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Loss of Appetite: </legend>
+              <div class="col-sm-10">
+                <input name="LossOfAppetite" id="LossOfAppetite" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Pain Behind Eyes: </legend>
+              <div class="col-sm-10">
+                <input name="PainBehindEyes" id="PainBehindEyes" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Back Pain: </legend>
+              <div class="col-sm-10">
+                <input name="BackPain" id="BackPain" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Constipation: </legend>
+              <div class="col-sm-10">
+               <input name="Constipation" id="Constipation" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Abdominal Pain: </legend>
+              <div class="col-sm-10">
+                <input name="AbdominalPain" id="AbdominalPain" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Diarrhoea: </legend>
+              <div class="col-sm-10">
+                <input name="Diarrhoea" id="Diarrhoea" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Mild Fever: </legend>
+              <div class="col-sm-10">
+                <input name="MildFever" id="MildFever" type="number" min="0" max="1">
+              </div>
+            </div>
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Yellow Urine: </legend>
+              <div class="col-sm-10">
+                <input name="YellowUrine" id="YellowUrine" type="number" min="0" max="1">
+              </div>
+            </div>
+         
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-primary" name="predict">Predict</button>
+            </div>
+          </div>
+      </div>
+      <div>
+        {% for i in messages %}
+        <h1>{{i}}</h1>
+        {% endfor %}
+      </div>
+    </form>
+  {% endblock %}

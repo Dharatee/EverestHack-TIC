@@ -1,0 +1,59 @@
+{% extends 'base.html'%}
+{% block content %}
+  <div class="container">
+      <div class="row">
+        <p align="center" class="flow-text cyan-text text-darken-7">Login</p>
+        <form class="col s12" action= "login" method="POST">
+          {% csrf_token %}
+          <div class="row">
+            <div class="input-field col s12">
+              <input name="username" id="username" type="text" class="validate">
+              <label for="usename">Username</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+              <input name="password" id="password" type="password" class="validate">
+              <label for="password">Password</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <button class="btn waves-effect waves-light" type="submit">Login
+            <i class="material-icons right">send</i>
+          </button> <i>{% for i in messages %}
+              <p style="color: darkred">{{i}}<p>
+              {% endfor %}</i>
+              <div id="errMsg" class="card-panel cyan lighten-2 red-text text-darken-2" style="display: none"></div>
+            </div>
+          </div>
+      </form>
+      <div class="row">
+        <div class="input-field col s12">
+          <div style="display: none">
+           <h4>portion to hide</h4>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+         <div style="display: none">
+           <h3>portion to hide</h3>
+           <p style="display: none">PORTION TO BE HIDDEN</p>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="page-footer teal">
+      <div class=" page-footer teal footer-copyright">
+        <div class="container flow-text" align="center">
+          Copyright &copy; 2019 <a class="brown-text text-darken-3" href="#">The Invictus Code</a>
+        </div>
+      </div>
+    </footer>
+
+
+  </body>
+</html>
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'base.html'%}
+{% block content %}
+<body>
+<h2 align="center">Appointment Form</h2>
+ <div class="container">
+  <div class="row">
+    <form class="col s12" action="appointment" method="POST">
+        {% csrf_token %}
+      <div class="row">
+        <div class="input-field col s4">
+          <input id="first_name" name="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s4">
+          <input id="middle_name" name="middle_name" type="text" class="validate">
+          <label for="middle_name">Middle Name</label>
+        </div>
+        <div class="input-field col s4">
+          <input id="last_name" name="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+            <div class="input-field col s12">
+               <label>Doctor'S Name</label>
+             </div>
+       </div>
+       <div class="row">
+    <div class="input-field col s12">
+    <select name= "doctor">
+        <option value=""  disabled selected> Choose Doctors</option>
+        {%  for i in docname %}
+        <option value='{{i}}'>{{i}}</option>
+        {% endfor %}
+    </select>
+    </div>
+    </div>
+ 
+    <div class="row">
+      <div class="input-field col s12">
+      <select name= "time">
+          <option value=""  disabled selected> Choose time</option>
+          {%  for i in time %}
+          <option value='{{i}}'>{{i}}</option>
+          {% endfor %}
+      </select>
+      </div>
+      </div>
+
+        <div class="row">
+        <div class="input-field col s12">
+          <input id="email" name="email" type="text" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      
+    <button class="btn waves-effect waves-light" type="submit">Submit
+    <i class="material-icons right">send</i>
+  </button>
+    {% for message in messages%}
+        <div>
+            <h1 style="color: blue">{{Message}}</h1>
+        </div>
+    {% endfor %}
+    </form>
+
+  </div>
+</body>
+</html>
+
+
+<script>
+    
+        $(document).ready(function(){
+          $('select').formSelect();
+        });
+        </script>
+      {% endblock %}
